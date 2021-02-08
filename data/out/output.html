@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script type="text/javascript" src="data.js" ></script>
+        <script type="text/json" src="runs.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <title>K-Means Clustering Implementation</title>
+        <link rel="icon" href="favicon.ico" type="image/png">
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+              <a href="#" class="navbar-brand">K-Means Clustering Implementation</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#result">Result</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#cluster-info">Clusters</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#previous-attempts">Previous Attempts</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        <div class="container mt-4">
+            <div class="row" id="result">
+                <div class="col-md-12">
+                    <h1>K-Means Result</h1>
+                    <p>Below is the final result of last successful run of the K-Means Clustering Java program. Scroll down for more information on each of the clusters and a history of the Dunn Index measures from previous attempts. There are <b><span id="dataSetSize"></span> points</b> in this dataset.</span></b></p>
+                    <p>It took the algorithm <b><span id="noAttempts"></span> attempt(s)</b> before reaching the acceptable Dunn Index Measure of <b id="acceptableDunnIndex"></b>.</p>
+
+                    <canvas id='canvas'></canvas>
+
+                    <div class="alert alert-dismissible alert-primary mt-2">
+                        <strong>Dunn Index Similarity Measure:</strong> <span  id="dunnIndex"></span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row" id="cluster-info">
+
+                <div class="col-md-12 mt-2">
+                    <h2>Clusters</h2>
+                    <p>Information on each of the clusters displayed on the scatter graph above.</p>
+                </div>
+            </div>
+
+            <div class="row" id="clusters"></div>
+
+            <hr>
+
+            <div class="row" id="previous-attempts">
+                <div class="col-md-12">
+                    <h2>Previous Attempts</h2>
+                    <div id="dunnGraph">
+                        <p>Below is a graph of the Dunn Index Similarity Measures of all previous attempts, including the final attempt.</p>
+            
+                        <canvas id='canvas2'></canvas>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            
+        </div>
+
+        <div class="bg-light mt-5 pb-5">
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>K-Means Clustering Algorithm</h3>
+                        <p>This is a K-Means Clustering algorithm written in Java for Assignment 1 of CO6226 - Artificial Intelligence & Machine Learning.</p>
+                        <p><b>Please note: </b>the algorithm does not always produce optimum results and may need to be run again. This is a caveat of the K-Means concept, as initial centroids are randomised.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="mt-2"><b>George Pears</b></p>
+                        <p><b>CO6226:</b> Assignment 1</p>
+                        <p><b>Student Number:</b> 1810013</p>
+                        <p><b>Assessment Number:</b> J70253</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+
+
