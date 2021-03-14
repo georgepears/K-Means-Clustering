@@ -83,7 +83,7 @@ public class JSONGenerator {
         }
 
         // Append x axis of dunn index line graph
-        jd.append("], datasets: [{ label: 'Dunn Index Measures', data: [");
+        jd.append("], datasets: [{ label: 'Dunn Index Measure', data: [");
         for (Double index: dunnIndexHistory) {
             jd.append(String.format("'%s', ", index));
         }

@@ -13,14 +13,14 @@ public class Main {
         // Create instance of KMeans class
         KMeans km = new KMeans();
         // Generate cluster from given data source and specified number of clusters and expected dunn index (use 1 for first result)
-        km.generate("data/data.csv", 5, 0.55);
+        km.generate(getDataSetChoiceFromInput(), getNumberOfClustersFromInput(), 0.55);
 
         openWebPage();
     }
 
     private static int getNumberOfClustersFromInput() {
         // Input number of clusters (K), retry if invalid
-        System.out.println("\nEnter number of clusters to generate (max 7):");
+        System.out.println("\nEnter number of clusters to generate (max 7, recommended 5):");
         int noClusters = scanner.nextInt();
 
         while (noClusters > 7 || noClusters < 1) {
@@ -31,13 +31,17 @@ public class Main {
     }
 
     private static String getDataSetChoiceFromInput() {
-        // Return input
-        return "";
-    }
+        String[] choices = new String[]{"data/data_clustered.csv", "data/data_random.csv"};
 
-    private static Double getAcceptableDunnIndexFromInput() {
-        // Return input
-        return 0.0;
+        System.out.println("\nChoose a dataset to cluster (type a number):\n    1) Clustered dataset (recommended)\n    2) Random dataset");
+        int choice = scanner.nextInt();
+
+        while (choice != 1 && choice != 2) {
+            System.out.println("\nInvalid option, choose a number, either: \n    1) Clustered dataset (recommended)\n    2) Random dataset");
+            choice = scanner.nextInt();
+        }
+
+        return choices[choice-1];
     }
 
     private static void openWebPage() {
